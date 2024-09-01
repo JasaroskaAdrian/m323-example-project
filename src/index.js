@@ -1,21 +1,23 @@
-let counterDisplayElem = document.querySelector(".counter-display");
-let counterMinusElem = document.querySelector(".counter-minus");
-let counterPlusElem = document.querySelector(".counter-plus");
+ // Initialize counter
+ let counter = 0;
 
-let count = 0;
+ // Get elements
+ const counterDisplay = document.getElementById('counterDisplay');
+ const plusButton = document.querySelector('.counter-plus');
+ const minusButton = document.querySelector('.counter-minus');
 
-updateDisplay();
+ // Update display
+ const updateDisplay = () => {
+     counterDisplay.textContent = counter;
+ };
 
-counterPlusElem.addEventListener("click", () => {
-  count++;
-  updateDisplay();
-});
+ // Add event listeners
+ plusButton.addEventListener('click', () => {
+     counter++;
+     updateDisplay();
+ });
 
-counterMinusElem.addEventListener("click", () => {
-  count--;
-  updateDisplay();
-});
-
-function updateDisplay() {
-  counterDisplayElem.innerHTML = count;
-}
+ minusButton.addEventListener('click', () => {
+     counter--;
+     updateDisplay();
+ });
